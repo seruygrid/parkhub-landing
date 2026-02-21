@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/api/lead/renter"
+  to = "/.netlify/functions/lead-renter"
+  status = 200
+
+[[redirects]]
+  from = "/api/lead/owner"
+  to = "/.netlify/functions/lead-owner"
+  status = 200
+
