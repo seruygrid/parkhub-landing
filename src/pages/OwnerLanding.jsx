@@ -84,6 +84,11 @@ export default function OwnerLanding() {
       await submitOwnerLead(form)
       setStatus('success')
       setStatusMessage("Дякуємо! Ми зв'яжемося з вами найближчим часом.")
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({
+        event: 'lead_owner_submit',
+        page_type: 'owner',
+      })
       setForm((prev) => ({
         ...prev,
         name: '',

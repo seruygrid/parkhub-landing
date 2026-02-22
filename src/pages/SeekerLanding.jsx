@@ -84,6 +84,11 @@ export default function SeekerLanding() {
       await submitRenterLead(form)
       setStatus('success')
       setStatusMessage("Дякуємо! Ми зв'яжемося з вами найближчим часом.")
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({
+        event: 'lead_rent_submit',
+        page_type: 'rent',
+      })
       setForm((prev) => ({
         ...prev,
         // keep messenger selection, reset the rest
